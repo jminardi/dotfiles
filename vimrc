@@ -24,8 +24,8 @@ Plugin 'tpope/vim-surround'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " git repos on your local machine (i.e. when working on your own plugin)
-Plugin 'file:///home/jack/code/mine/dotfiles/enaml'
-Plugin 'file:///home/jack/code/mine/dotfiles/gcode'
+Plugin 'file:///Users/jack/code/mine/dotfiles/enaml'
+Plugin 'file:///Users/jack/code/mine/dotfiles/gcode'
 
 call vundle#end()            " required
 
