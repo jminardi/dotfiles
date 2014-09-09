@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dir=~/come/mine/dotfiles           # dotfiles directory
+dir=~/code/mine/dotfiles           # dotfiles directory
 files="profile vimrc gitconfig"    # list of files/folders to symlink in homedir
 
 # change to the dotfiles directory
