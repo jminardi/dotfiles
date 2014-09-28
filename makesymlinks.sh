@@ -13,3 +13,6 @@ for file in $files; do
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
 done
+
+mkdir ~/.vim/backups
+mkdir ~/.vim/swaps
