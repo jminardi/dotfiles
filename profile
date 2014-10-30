@@ -2,11 +2,12 @@
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 # select qt as default toolkit
 export ETS_TOOLKIT=qt4
-export PATH=/Applications/Julia-0.3.0-prerelease-3e6a6c7bd8.app/Contents/Resources/julia/bin:$PATH
+export PATH=/Applications/Julia-0.3.0.app/Contents/Resources/julia/bin:$PATH
 
 #some useful alias'
 alias vi="open -a macvim"
 alias jot="open -a macvim ~/sync/notes"
+alias jnb="ipython notebook --profile julia"
 
 #add current git branch to bash prompt
 function parse_git_branch () {
