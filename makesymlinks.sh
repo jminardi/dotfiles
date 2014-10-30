@@ -2,7 +2,7 @@
 
 # list of files/folders to symlink in homedir
 files="profile vimrc gitconfig"
-dir=="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"   # dotfiles directory
+dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"   # dotfiles directory
 
 # change to the dotfiles directory
 echo "Changing to the $dir directory"
@@ -22,4 +22,6 @@ done
 mkdir -p ~/.vim/backups
 mkdir -p ~/.vim/swaps
 mkdir -p ~/.vim/bundle
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
+    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi
