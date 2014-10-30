@@ -31,6 +31,7 @@ call vundle#end()            " required
 
 let mapleader = ","
 
+set number
 set nocompatible
 set smartindent
 set autoindent
