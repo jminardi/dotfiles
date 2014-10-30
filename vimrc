@@ -118,7 +118,11 @@ nnoremap <leader>s :execute 'mksession! ~/.vim/sessions/' . GetCurrentBranch() .
 nnoremap <leader>l :execute 'source ~/.vim/sessions/' . GetCurrentBranch() . '.vim'<CR>
 "nnoremap <leader>s :execute 'mksession! ~/.vim/sessions/sesssion.vim'<CR>
 "nnoremap <leader>l :execute 'source ~/.vim/sessions/session.vim'<CR>
-autocmd BufNewFile,BufRead,BufEnter nnoremap <leader>s :execute 'mksession! ~/.vim/sessions/sesssion.vim'<CR>
+"function! SaveStart()
+"    :execute  'mksession! ~/.vim/sessions/session.vim'<CR>
+"endfunction
+"autocmd BufNewFile,BufRead,BufEnter * :call SaveStart()
+"autocmd BufNewFile,BufRead,BufEnter * :execute 'mksession! ~/.vim/sessions/session.vim'<CR>
 
 "remap Caps to lowercase
 command WQ wq
