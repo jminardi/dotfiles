@@ -18,14 +18,16 @@ Plugin 'gmarik/Vundle.vim'
 
 Plugin 'kien/ctrlp.vim'
 Plugin 'klen/python-mode'
-Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive'
+Plugin 'JuliaLang/julia-vim'
+Bundle 'yssl/QFEnter'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " git repos on your local machine (i.e. when working on your own plugin)
-Plugin 'file:///Users/jack/code/mine/dotfiles/enaml'
-Plugin 'file:///Users/jack/code/mine/dotfiles/gcode'
+"Plugin 'file:///Users/jack/code/mine/dotfiles/enaml'
+"Plugin 'file:///Users/jack/code/mine/dotfiles/gcode'
 
 call vundle#end()            " required
 
@@ -66,9 +68,9 @@ nmap ,. :tabnext<CR>
 nmap ., :tabpre<CR>
 
 " run current file in python
-nmap rr :!python %<CR>
+nmap rr :!/Users/jack/Library/Enthought/Canopy_64bit/User/bin/python %<CR>
 " run the tests of the file
-nmap rt :!python tests/test_%:h<CR>
+nmap rt :!/Users/jack/Library/Enthought/Canopy_64bit/User/bin/python tests/test_%:h<CR>
 
 " Centralize backups, swapfiles and undo history
 set backupdir=~/.vim/backups
@@ -117,16 +119,17 @@ function! GetCurrentBranch()
 endfunction
 nnoremap <leader>s :execute 'mksession! ~/.vim/sessions/' . GetCurrentBranch() . '.vim'<CR>
 nnoremap <leader>l :execute 'source ~/.vim/sessions/' . GetCurrentBranch() . '.vim'<CR>
-"nnoremap <leader>s :execute 'mksession! ~/.vim/sessions/sesssion.vim'<CR>
-"nnoremap <leader>l :execute 'source ~/.vim/sessions/session.vim'<CR>
-"function! SaveStart()
-"    :execute  'mksession! ~/.vim/sessions/session.vim'<CR>
-"endfunction
-"autocmd BufNewFile,BufRead,BufEnter * :call SaveStart()
-"autocmd BufNewFile,BufRead,BufEnter * :execute 'mksession! ~/.vim/sessions/session.vim'<CR>
 
 "remap Caps to lowercase
 command WQ wq
 command Wq wq
 command W w
 command Q q
+
+" Open quickfix files in new tab or split (QFEnter plugin)
+let g:qfenter_vopen_map = ['<C-v>']
+let g:qfenter_hopen_map = ['<C-CR>', '<C-s>', '<C-x>']
+let g:qfenter_topen_map = ['<C-t>']
+
+" Search the current git repo for the word under the cursor
+map <leader>8 :Ggrep <cword><CR><CR>:copen<CR>

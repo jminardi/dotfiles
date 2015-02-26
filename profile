@@ -8,6 +8,7 @@ export PATH=/Applications/Julia-0.3.0.app/Contents/Resources/julia/bin:$PATH
 alias vi="open -a macvim"
 alias jot="open -a macvim ~/sync/notes"
 alias jnb="ipython notebook --profile julia"
+alias grep='grep --color=auto --exclude-dir={.ropeproject,.git}'
 
 #add current git branch to bash prompt
 function parse_git_branch () {
@@ -34,3 +35,6 @@ alias la="ls -GpFha"
 #easily activate the canopy venv
 alias "canopy-activate"="source ~/Library/Enthought/Canopy_64bit/User/bin/activate"
 canopy-activate
+
+# setup rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
