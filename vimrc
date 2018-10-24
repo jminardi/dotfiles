@@ -22,6 +22,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'JuliaLang/julia-vim'
+Plugin 'tomlion/vim-solidity'
 Bundle 'yssl/QFEnter'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
@@ -71,6 +72,9 @@ nmap ., :tabpre<CR>
 nmap rr :!/Users/jack/Library/Enthought/Canopy_64bit/User/bin/python %<CR>
 " run the tests of the file
 nmap rt :!/Users/jack/Library/Enthought/Canopy_64bit/User/bin/python tests/test_%:h<CR>
+
+" pretty print json
+com PrettyPrintJSON :%!python -c "import json, sys, collections; print json.dumps(json.load(sys.stdin, object_pairs_hook=collections.OrderedDict), indent=2)"
 
 " Centralize backups, swapfiles and undo history
 set backupdir=~/.vim/backups

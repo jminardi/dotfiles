@@ -7,3 +7,9 @@
 	required = true
 	clean = git media clean %f
 	smudge = git media smudge %f
+[gui]
+	recentrepo = /Users/jack/code/mine/mecode
+	recentrepo = /Users/jack/code/voxel8/hq
+	recentrepo = /Users/jack/code/mine/ring_generator
+[alias] 
+    gui = !sh -c '/usr/local/opt/git/libexec/git-core/git-gui'
